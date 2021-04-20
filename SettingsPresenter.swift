@@ -22,8 +22,11 @@ protocol SettingsPresenterInterface: class {
     func bitcoinAppStackViewTapped()
 }
 
-class Constant {
-    static let bitcoinAppBaseUrl = "https://google.com"
+private extension SettingsPresenter {
+    class Constant {
+        static let ballabGameUrl = "https://aniltaskiran.apple.com/us/app/balllab/id1473003145"
+        static let bitcoinAppBaseUrl = "https://google.com"
+    }
 }
 
 class SettingsPresenter {
@@ -48,9 +51,8 @@ class SettingsPresenter {
 
 extension SettingsPresenter: SettingsPresenterInterface {
     func balllabAppStackViewTapped() {
-        if let url = URL(string: "https://apps.apple.com/us/app/balllab/id1473003145") {
-            UIApplication.shared.open(url)
-        }
+        guard let url = URL(string: Constant.ballabGameUrl) else { return }
+        UIApplication.shared.open(url)
     }
 
     func bitcoinAppStackViewTapped() {
