@@ -50,7 +50,7 @@ extension SettingsPresenter: SettingsPresenterInterface {
     }
 
     func bitcoinAppStackViewTapped() {
-        if let url = URL(string: "https://apps.apple.com/us/app/coin-ticker/id1474547471") {
+        if let url = URL(string: "https://google.com") {
             UIApplication.shared.open(url)
         }
     }
