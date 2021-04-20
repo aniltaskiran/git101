@@ -22,6 +22,10 @@ protocol SettingsPresenterInterface: class {
     func bitcoinAppStackViewTapped()
 }
 
+class Constant {
+    static let bitcoinAppBaseUrl = "https://google.com"
+}
+
 class SettingsPresenter {
     weak private var view: SettingsViewInterface?
     private let router: SettingsRouterInterface
@@ -50,9 +54,8 @@ extension SettingsPresenter: SettingsPresenterInterface {
     }
 
     func bitcoinAppStackViewTapped() {
-        if let url = URL(string: "https://google.com") {
-            UIApplication.shared.open(url)
-        }
+        guard let url = URL(string: Constant.bitcoinAppBaseUrl) else { return }
+        UIApplication.shared.open(url)
     }
 
     func load() {
