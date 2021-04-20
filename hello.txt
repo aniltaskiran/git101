@@ -1,2 +1,2 @@
-merhaba dünya feature 1
+hello world! feature 1
 ekstra görsel eklendi
